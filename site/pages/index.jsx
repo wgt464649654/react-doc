@@ -8,5 +8,10 @@ export default {
     },
     // 'Others': {
     // }
+  },
+  functions: {
+    'Basic': {
+      'imgLoader': require('./functions/ImgLoader'),
+    }
   }
 }

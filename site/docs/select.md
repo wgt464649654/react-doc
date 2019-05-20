@@ -40,14 +40,12 @@ render() {
 }
 
 getDataList() {
-    console.log('请求接口');
+    message.info('请求接口');
 }
 
 onChange(field) {
-    console.log(field);
     this.setState({ field });
 }
-
 ```
 :::
 

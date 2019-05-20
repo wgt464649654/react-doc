@@ -8,25 +8,28 @@ import { message, Icon } from 'antd';
 const nav = [
     {
         name: '组件',
-        id: 'component'
+        id: 'components',
+        defaultPage: 'title'
     },
-    {
-        name: 'functions',
-        id: 'functions'
-    }
+    // {
+    //     name: '方法',
+    //     id: 'functions',
+    //     defaultPage: 'imgLoader'
+    // }
 ]
 export default function Page() {
     const [curPage, setCurPage] = useState('title');
-    const [curApi, setCurApi] = useState('component');
+    const [curApi, setCurApi] = useState('components');
 
     const RenderComponent = useMemo(() => {
-        return React.createElement(pages.components.Basic[curPage].default);
+        return React.createElement(pages[curApi].Basic[curPage].default);
     }, [curPage]);
 
     useEffect(() => {
         // 初始化
         const routes = location.hash.match(/(?:\/(.+))?\/(.+)/);
         if (routes) {
+            setCurApi(routes[1]);
             setCurPage(routes[2]);
         }
     }, []);
@@ -36,12 +39,10 @@ export default function Page() {
     }, [curPage, curApi]);
 
     const switchApi = (item) => {
-        if (item.id !== 'component') {
-            message.info('暂无开放');
-            return;
-        }
         setCurApi(item.id);
+        setCurPage(item.defaultPage);
     }
+
     return (
         <div className="app">
             <header className="header">
@@ -64,12 +65,12 @@ export default function Page() {
                 <nav className="side-nav">
                     <ul>
                         <li className="nav-item">
-                            {Object.keys(pages.components).map(group => {
+                            {Object.keys(pages[curApi]).map(group => {
                                 return (
                                 <div className="nav-group" key={group}>
                                     <div className="nav-group__title">{locales[group]}</div>
                                     <ul className="pure-menu-list">
-                                        {Object.keys(pages.components[group]).map(page => {
+                                        {Object.keys(pages[curApi][group]).map(page => {
                                             return (
                                                 <li key={page} className="nav-item" onClick={() => setCurPage(page)}>
                                                     <a href="javascript:void(0);" className={curPage === page ? 'active' : ''}>{locales.page[page]}</a>
