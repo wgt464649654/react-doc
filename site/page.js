@@ -1,8 +1,9 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import ScrollToTop from 'react-scroll-up';
 
 import pages from './pages';
 import locales from './locales';
-import { message } from 'antd';
+import { message, Icon } from 'antd';
 
 const nav = [
     {
@@ -84,6 +85,11 @@ export default function Page() {
                 </nav>
                 <div className="content">
                     {RenderComponent}
+                    <ScrollToTop showUnder={210}>
+                    <div className="page-component-up">
+                        <Icon type="caret-up" />
+                    </div>
+                    </ScrollToTop>
                 </div>
             </div>
         </div>
