@@ -1,0 +1,27 @@
+@import (reference) '~src/assets/less/variables.less';
+@width: 234px;
+.tms-search-select-wrapper {
+    position: relative;
+    max-width: @width;
+    .tms-search-icon {
+        right: @tms-spacing;
+        font-size: 18px;
+        position: absolute;
+        top: calc(50% - 9px);
+        color: @font-disable-color;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .tms-search-select {
+        width: @width;
+        .ant-select-selection__placeholder {
+            top: 50%;
+        }
+    }
+    .ant-select .ant-select-selection {
+        width: @width;
+        border-radius: @tms-huge-border-radius;
+        box-sizing: border-box;
+        padding-right: @tms-middle-spacing;
+    }
+}

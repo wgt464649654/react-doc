@@ -2,7 +2,18 @@
   "env": {
     "development": {
       "presets" : ["env", "stage-1", "react"],
-      "plugins" : ["react-hot-loader/babel", ["transform-runtime", { "polyfill": false }]]
+      "plugins" : [
+        "react-hot-loader/babel",
+        ["transform-runtime", { "polyfill": false }],
+        [
+          "import",
+          {
+            "libraryName": "antd",
+            "libraryDirectory": "lib",
+            "style": true
+          }
+        ]
+      ]
     },
     "test": {
       "presets" : ["env", "stage-1", "react"]

@@ -1,0 +1,20 @@
+@import (reference) '~src/assets/less/variables.less';
+.tms-config-group {
+    background: @tms-theme-default;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    width: 130px;
+    border-radius: @tms-border-radius;
+    overflow: hidden;
+    padding: @tms-spacing 0;
+    li {
+        width: 100%;
+        padding: 0 @tms-spacing;
+        line-height: 28px;
+        font-size: @font-size;
+        color: @font-color;
+        &:hover {
+            color: @tms-theme;
+            background: @tms-theme-default;
+        }
+    }
+}

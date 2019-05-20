@@ -1,22 +1,13 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
+import {render} from 'react-dom';
 
-import 'core-js';
-
-import 'element-theme-default';
-
-import './styles/base.scss';
+import './styles/base.less';
 import './styles/prism.css';
 
-import App from './page';
+import Page from './page';
 
-render(<AppContainer><App /></AppContainer>, document.getElementById('app'));
+render(<Page />, document.getElementById('app'));
 
 if (module.hot) {
-  module.hot.accept('./page', () => {
-    const App = require('./page').default;
-
-    render(<AppContainer><App /></AppContainer>, document.getElementById('app'));
-  });
+  module.hot.accept();
 }

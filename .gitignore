@@ -1,14 +1,2 @@
-.DS_Store
-Thumbs.db
-.idea
-
-npm-debug.log
-node_modules
-
-/dist
-/next.js
-
-.vscode
-Makefile
-yarn.lock
+node_modules/
 package-lock.json

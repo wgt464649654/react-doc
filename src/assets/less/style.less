@@ -1,0 +1,219 @@
+/**  
+ * @file 全局样式配置 主要提供一些基础的的样式，
+ * @version 2.0
+ */
+
+@import (reference) './variables.less';
+@import './flex.less';
+@import './rewriteantd.less';
+@import './space.less';
+
+html body {
+    font-family: 'Arial', 'Microsoft YaHei', 'Heiti', 'sans-serif';
+    font-size: @font-size;
+    color: @font-color;
+}
+
+#root {
+    overflow-y: hidden;
+    overflow-x: overlay;
+}
+.tms-minwidth {
+    min-width: 1120px;
+    overflow-y: hidden;
+    overflow-x: overlay;
+}
+/* 字体 */
+.tms-small-font {
+    font-size: 12px;
+}
+.tms-font {
+    font-size: 14px;
+}
+/* 标题 */
+.tms-title {
+    font-size: 16px;
+    color: @font-title-color;
+    line-height: 16px;
+}
+
+.tms-small-title {
+    font-size: 14px;
+    color: @font-title-color;
+    line-height: 14px;
+}
+.tms-large-title {
+    font-size: 18px;
+    color: @font-title-color;
+    line-height: 18px;
+}
+.tms-font-size {
+    font-size: @font-size;
+}
+/*字体颜色 禁用*/
+.tms-tips-color {
+    color: @font-tips-color;
+}
+/*字体颜色 常规*/
+.tms-font-color {
+    color: @font-color;
+}
+.tms-disable-color {
+    color: @font-disable-color;
+}
+.tms-background {
+    background: @tms-background;
+}
+
+.tms-color,
+.tms-theme,
+.tms-active {
+    color: @tms-theme;
+}
+
+.tms-middle-ml {
+    margin-left: @tms-middle-spacing;
+}
+.tms-ml {
+    margin-left: @tms-spacing;
+}
+.tms-large-ml {
+    margin-left: @tms-large-spacing;
+}
+.tms-middle-mr {
+    margin-right: @tms-middle-spacing;
+}
+.tms-mr {
+    margin-right: @tms-spacing;
+}
+.tms-large-mr {
+    margin-right: @tms-large-spacing;
+}
+.tms-middle-mt {
+    margin-top: @tms-middle-spacing;
+}
+.tms-mt {
+    margin-top: @tms-spacing;
+}
+.tms-large-mt {
+    margin-top: @tms-large-spacing;
+}
+.tms-middle-mb {
+    margin-bottom: @tms-middle-spacing;
+}
+.tms-mb {
+    margin-bottom: @tms-spacing;
+}
+.tms-large-mb {
+    margin-bottom: @tms-large-spacing;
+}
+.tms-middle-pl {
+    padding-left: @tms-middle-spacing;
+}
+.tms-pl {
+    padding-left: @tms-spacing;
+}
+.tms-large-pl {
+    padding-left: @tms-large-spacing;
+}
+.tms-middle-pr {
+    padding-right: @tms-middle-spacing;
+}
+.tms-pr {
+    padding-right: @tms-spacing;
+}
+.tms-large-pr {
+    padding-right: @tms-large-spacing;
+}
+.tms-middle-pt {
+    padding-top: @tms-middle-spacing;
+}
+.tms-pt {
+    padding-top: @tms-spacing;
+}
+.tms-large-pt {
+    padding-top: @tms-large-spacing;
+}
+
+.tms-middle-pb {
+    padding-bottom: @tms-middle-spacing;
+}
+.tms-pb {
+    padding-bottom: @tms-spacing;
+}
+.tms-large-pb {
+    padding-bottom: @tms-large-spacing;
+}
+.tms-right {
+    text-align: right;
+}
+.tms-center {
+    text-align: center;
+}
+.tms-hidden {
+    overflow: hidden;
+}
+.tms-block {
+    display: block;
+}
+.tms-hide {
+    display: none;
+    opacity: 0;
+}
+.tms-inline-block {
+    display: inline-block;
+}
+.tms-pointer {
+    cursor: pointer;
+}
+.tms-oneline {
+    width: 100%;
+    display: inline-block;
+    overflow: hidden; /*超出部分隐藏*/
+    white-space: nowrap; /*不换行*/
+    text-overflow: ellipsis; /*超出部分文字以...显示*/
+}
+
+/* 页卡片篇样式*/
+.tms-page-card {
+    background: @tms-theme-default;
+    // box-shadow: 0 2px 4px 0 rgba(0, 24, 89, 0.12);
+}
+.tms-page-card-padding {
+    .tms-page-card();
+    padding: 8px;
+}
+.tms-generate-page {
+    .tms-page-card-padding();
+    min-height: 100%;
+    margin-bottom: 12px;
+}
+
+.tms-search-input,
+.tms-search-input.ant-input-affix-wrapper {
+    width: 240px;
+}
+
+/**scroll 滚动条样式**/
+*::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #f5f5f5;
+}
+*::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(left, #fff, #e4e4e4);
+    border: 1px solid #aaa;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(left, #22add4, #1e98ba);
+}

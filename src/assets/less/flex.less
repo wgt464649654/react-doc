@@ -1,0 +1,62 @@
+/**  
+ * @file flex 布局
+ * @version 2.0
+ */
+/*flex相关*/
+.tms-flex {
+    display: flex;
+}
+
+.tms-flex-column {
+    .tms-flex();
+    flex-direction: column;
+}
+
+.tms-space-between {
+    justify-content: space-between;
+}
+
+.tms-space-start {
+    justify-content: flex-start;
+}
+
+.tms-space-end {
+    justify-content: flex-end;
+}
+
+.tms-align-center {
+    align-items: center;
+}
+
+.tms-space-center {
+    justify-content: center;
+}
+
+.tms-flex-wrap {
+    flex-wrap: wrap;
+}
+
+/*垂直局中*/
+.tms-flex-c {
+    &:extend(.tms-flex);
+    &:extend(.tms-align-center);
+}
+
+/*垂直局中 换行*/
+.tms-flex-c-w {
+    &:extend(.tms-flex-c);
+    &:extend(.tms-flex-wrap);
+}
+
+/*垂直水平局中*/
+.tms-flex-c-c {
+    &:extend(.tms-flex-c);
+    &:extend(.tms-space-center);
+}
+
+/*垂直水平局中 换行*/
+.tms-flex-c-c-w {
+    &:extend(.tms-flex-c-c);
+    &:extend(.tms-flex-wrap);
+}
+

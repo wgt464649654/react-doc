@@ -20,7 +20,11 @@ new WebpackDevServer(webpack({
     new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
-    extensions: ['.js', '.jsx']
+    modules: ['../src', '../node_modules'],
+    extensions: ['.js', '.jsx', '.scss', '.css', 'less'],
+    alias: {
+        src: path.resolve('../src')
+    }
   },
   module: {
     rules: [
@@ -28,9 +32,9 @@ new WebpackDevServer(webpack({
         test: /\.jsx?$/,
         loader: 'babel-loader',
         include: [
-          path.join(__dirname, '../site'),
           path.join(__dirname, '../src'),
-          path.join(__dirname, '../libs')
+          path.join(__dirname, '../libs'),
+          path.join(__dirname, '../site')
         ]
       },
       {
@@ -38,8 +42,21 @@ new WebpackDevServer(webpack({
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        test: /\.less/,
+        use: [
+          {
+              loader: 'style-loader'
+          },
+          {
+              loader: 'css-loader'
+          },
+          {
+              loader: 'less-loader',
+              options: {
+                javascriptEnabled: true
+              }
+          }
+        ]
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)(\?.+)?$/,

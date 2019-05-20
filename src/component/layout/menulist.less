@@ -1,0 +1,21 @@
+@import (reference) '~src/assets/less/variables.less';
+.tms-menulist {
+    background: @tms-theme;
+    border: none;
+    .ant-menu-item {
+        font-size: 14px;
+        color: #f3f4f6;
+        line-height: 48px;
+        cursor: pointer;
+        color: #dbdbdb;
+        border-bottom: 3px solid transparent;
+    }
+    .ant-menu-item:hover {
+        color: #fff;
+        border-bottom: 3px solid transparent;
+    }
+    .ant-menu-item-selected {
+        border-bottom: 3px solid #4a90e2;
+        color: #fff;
+    }
+}
