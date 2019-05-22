@@ -1,4 +1,5 @@
 
+<div id="#imgLoader" />
 :::demo
 
 ```js
@@ -19,13 +20,13 @@ componentDidMount() {
 }
 
 async getImg() {
-    try {
-        await imgLoader(this.state.url);
-        this.setState({result: 'success'});
-        message.success('加载成功')
-    } catch (error) {
-        this.setState({result: 'fail'});
-    }
+    // try {
+    //     await imgLoader(this.state.url);
+    //     this.setState({result: 'success'});
+    //     message.success('加载成功')
+    // } catch (error) {
+    //     this.setState({result: 'fail'});
+    // }
 }
 
 render() {

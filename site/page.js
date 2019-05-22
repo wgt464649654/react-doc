@@ -11,11 +11,11 @@ const nav = [
         id: 'components',
         defaultPage: 'title'
     },
-    // {
-    //     name: '方法',
-    //     id: 'functions',
-    //     defaultPage: 'imgLoader'
-    // }
+    {
+        name: '方法',
+        id: 'functions',
+        defaultPage: 'functions'
+    }
 ]
 export default function Page() {
     const [curPage, setCurPage] = useState('title');

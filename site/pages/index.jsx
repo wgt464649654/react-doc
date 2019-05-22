@@ -5,13 +5,11 @@ export default {
     'Basic': {
       'title': require('./title'),
       'select': require('./select')
-    },
-    // 'Others': {
-    // }
+    }
   },
   functions: {
     'Basic': {
-      'imgLoader': require('./functions/ImgLoader'),
+      'functions': require('./functions'),
     }
   }
 }
