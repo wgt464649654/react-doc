@@ -4,7 +4,8 @@ export default {
   components: {
     'Basic': {
       'title': require('./title'),
-      'select': require('./select')
+      'select': require('./select'),
+      'radio': require('./radio')
     }
   },
   functions: {

@@ -11,28 +11,27 @@ const nav = [
         id: 'components',
         defaultPage: 'title'
     },
-    {
-        name: '方法',
-        id: 'functions',
-        defaultPage: 'functions'
-    }
+    // {
+    //     name: '方法',
+    //     id: 'functions',
+    //     defaultPage: 'functions'
+    // }
 ]
+function getCurUrlRestful(index, defaultVal) {
+    const routes = location.hash.match(/(?:\/(.+))?\/(.+)/);
+    if (routes) {
+        return routes[index];
+    }
+    return defaultVal;
+}
+
 export default function Page() {
-    const [curPage, setCurPage] = useState('title');
-    const [curApi, setCurApi] = useState('components');
+    const [curPage, setCurPage] = useState(getCurUrlRestful(2, 'title'));
+    const [curApi, setCurApi] = useState(getCurUrlRestful(1, 'components'));
 
     const RenderComponent = useMemo(() => {
         return React.createElement(pages[curApi].Basic[curPage].default);
     }, [curPage]);
-
-    useEffect(() => {
-        // 初始化
-        const routes = location.hash.match(/(?:\/(.+))?\/(.+)/);
-        if (routes) {
-            setCurApi(routes[1]);
-            setCurPage(routes[2]);
-        }
-    }, []);
 
     useEffect(() => {
         window.location.hash = `/${curApi}/${curPage}`;

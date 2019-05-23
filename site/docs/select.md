@@ -1,6 +1,6 @@
-## SearchSelect 带搜索下拉框
+## 下拉框
 
-### 一般用法
+### SearchSelect 带搜索下拉框
 :::demo
 
 ```js

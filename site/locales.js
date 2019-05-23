@@ -3,6 +3,7 @@ module.exports = {
         title: '标题',
         select: '下拉框',
         functions: '方法',
+        radio: '单选',
         imgLoader: '图片加载器'
     },
     Basic: '基础',
